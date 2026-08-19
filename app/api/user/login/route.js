@@ -15,7 +15,7 @@ export async function POST(request){
        //console.log(savedUserData)
         //if(savedUserData){
             //if(reqBody.password == savedUserData.password ){
-            if(reqBody.password == "sima123"){
+            if(reqBody.password == "kuma123"){
             //if(true){
                 console.log("trueだった")
                 const secretKey = new TextEncoder().encode("next-market-app-book")
