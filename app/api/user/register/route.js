@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
-import connectDB from "../../../utils/database"
-import { UserModel } from "../../../utils/schemaModels"
+//import connectDB from "../../../utils/database"
+//import { UserModel } from "../../../utils/schemaModels"
 
 export async function POST(request){
 
@@ -9,8 +9,8 @@ export async function POST(request){
 
     try{
    //console.log(await request.json())
-    await connectDB()
-    await UserModel.create(reqBody)
+    //await connectDB()
+    //await UserModel.create(reqBody)
     return NextResponse.json({message:"ユーザー登録成功"})
     }catch{
     return NextResponse.json({message:"ユーザー登録失敗"})
