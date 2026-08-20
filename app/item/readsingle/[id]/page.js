@@ -3,8 +3,8 @@ const getSingleItem = (id) => {
     //const response = fetch("")
 }
 const ReadSingleItem = (context) => {
-    //console.log(context)
-    console.log("これは出る？")
+    console.log(context)
+    //console.log("これは出る？")
     return (
         <h1>個別アイテムページだ</h1>
     )
