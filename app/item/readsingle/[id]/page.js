@@ -3,7 +3,7 @@ const getSingleItem = (id) => {
     //const response = fetch("")
 }
 const ReadSingleItem = (context) => {
-    console.log(context)
+    //console.log(context)
     getSingleItem(context.params.id)
     return (
         <h1>個別アイテムページだ</h1>
