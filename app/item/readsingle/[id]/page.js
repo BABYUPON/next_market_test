@@ -4,7 +4,7 @@ const getSingleItem = (id) => {
 }
 const ReadSingleItem = (context) => {
     console.log(context)
-    //console.log("これは出る？")
+    getSingleItem(context.params.id)
     return (
         <h1>個別アイテムページだ</h1>
     )
