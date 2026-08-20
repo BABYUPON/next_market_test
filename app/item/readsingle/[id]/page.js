@@ -1,5 +1,6 @@
-const getSingleItem = () => {
-    const response = fetch("")
+const getSingleItem = (id) => {
+    console.log(id)
+    //const response = fetch("")
 }
 const ReadSingleItem = (context) => {
     console.log(context)
