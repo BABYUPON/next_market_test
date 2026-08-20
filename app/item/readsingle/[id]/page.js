@@ -4,7 +4,7 @@ const getSingleItem = () => {
 const ReadSingleItem = (context) => {
     console.log(context)
     return (
-        <h1>個別アイテムページ</h1>
+        <h1>個別アイテムページだ</h1>
     )
 }
 
