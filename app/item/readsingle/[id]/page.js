@@ -10,19 +10,19 @@ const ReadSingleItem = async(context) => {
     //console.log(context)
     const { id } = await context.params;
     console.log(id)
-    const singleItem = await getSingleItem(id)
-    console.log(singleItem)
+    const data = await getSingleItem(id)
+    console.log(data)
     return (
         <div>
             <div>
                 <h1 className="h1-style">個別アイテムページだ</h1>
-                <Image src={singleItem.image} width={750} height={500} alt="item-image" priority/>
+                <Image src={data.singleItem.image} width={750} height={500} alt="item-image" priority/>
             </div>
             <div>
-                <h1>{singleItem.title}</h1>
-                <h2>{singleItem.price}</h2>
+                <h1>{data.singleItem.title}</h1>
+                <h2>{data.singleItem.price}</h2>
                 <hr/>
-                <p>{singleItem.description}</p>
+                <p>{data.singleItem.description}</p>
             </div>
         </div>
     )
