@@ -1,5 +1,12 @@
 import Image from "next/image"
 
+const singleItem {
+	userId: number;
+	id: number;
+	title: string;
+	body: string;
+}
+
 const getSingleItem = async(id) => {
     //console.log(id)
     const response = await fetch('http://localhost:3000/api/item/readsingle/${id}')
@@ -10,7 +17,14 @@ const ReadSingleItem = async(context) => {
     //console.log(context)
     const { id } = await context.params;
     console.log(id)
-    const   singleItem = await getSingleItem(id)
+    const   singleItem = {
+        title: String,        
+        image: String,
+        price: String,    
+        description: String,
+        email: String,
+        __v: 0}
+    singleItem = await getSingleItem(id)
     console.log(singleItem)
     return (
         <div>
