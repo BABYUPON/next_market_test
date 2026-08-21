@@ -11,11 +11,11 @@ const ReadSingleItem = async(context) => {
     const { id } = await context.params;
     console.log(id)
     const   singleItem = {
-        title: String,        
-        image: String,
-        price: String,    
-        description: String,
-        email: String,
+        title: ' ',        
+        image: ' ',
+        price: '0',    
+        description: ' ',
+        email: ' ',
         __v: 0}
     singleItem = await getSingleItem(id)
     console.log(singleItem)
