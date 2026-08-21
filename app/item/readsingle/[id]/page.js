@@ -9,7 +9,7 @@ const getSingleItem = async(id) => {
 const ReadSingleItem = async(context) => {
     //console.log(context)
     const { id } = await context.params;
-    const singleItem = await getSingleItem(id)
+    const {singleItem} = await getSingleItem(id)
     console.log(singleItem)
     return (
         <div>
