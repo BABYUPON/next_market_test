@@ -15,7 +15,7 @@ const ReadSingleItem = async(context) => {
         <div>
             <div>
                 <h1 className="h1-style">個別アイテムページだ</h1>
-                <Image src={data.singleItem.image} width={750} height={500} alt="item-image" priority/>
+                <Image src={data.image} width={750} height={500} alt="item-image" priority/>
             </div>
             <div>
                 <h1>{data.singleItem.title}</h1>
