@@ -9,6 +9,7 @@ const getSingleItem = async(id) => {
 const ReadSingleItem = async(context) => {
     //console.log(context)
     const { id } = await context.params;
+    console.log(id)
     const data = await getSingleItem(id)
     console.log(data)
     return (
