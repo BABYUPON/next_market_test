@@ -1,12 +1,5 @@
 import Image from "next/image"
 
-const singleItem {
-	userId: number;
-	id: number;
-	title: string;
-	body: string;
-}
-
 const getSingleItem = async(id) => {
     //console.log(id)
     const response = await fetch('http://localhost:3000/api/item/readsingle/${id}')
