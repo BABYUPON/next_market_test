@@ -11,7 +11,7 @@ const ReadSingleItem = async(context) => {
     const { id } = await context.params;
     console.log(id)
     const data = await getSingleItem(id)
-    //console.log(data)
+    console.log("dataは", data)
     return (
         <div>
             <div>
