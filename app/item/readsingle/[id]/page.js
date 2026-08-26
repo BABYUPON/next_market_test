@@ -10,7 +10,7 @@ const ReadSingleItem = async(context) => {
     //console.log(context)
     const { id } = await context.params;
     console.log(id)
-    const data = getSingleItem(id)
+    const data = await getSingleItem(id)
     
     console.log("dataは", data)
     return (
