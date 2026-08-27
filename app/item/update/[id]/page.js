@@ -29,8 +29,8 @@ const UpdateItem = (context) => {
     const handleSubmit = async(e) => {
         e.preventDefault()
         try{
-            const response = await fetch("http://localhost:3000/api/item/create",{
-                method: "POST",
+            const response = await fetch(`http://localhost:3000/api/item/update/${context.params.id}`,{
+                method: "PUT",
                 headers: {
                     "Accept": "applecation/json",
                     "Content-Type": "application/json",
@@ -41,7 +41,7 @@ const UpdateItem = (context) => {
                     price: price,
                     image: image,
                     description: description,
-                    email: "ダミーデータ"
+                    email: "dummy@gmail.com"
                 })
             })
             const jsonData = await response.json()
