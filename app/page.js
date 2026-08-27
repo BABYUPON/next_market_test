@@ -17,7 +17,7 @@ const ReadAllItems = async() =>{
         <div>
             {allItems.map(item => 
                 <Link href={`/item/readsingle/${item._id}`} key={item._id}>
-                    <img src={item.image} width={750} height={500} alt="item-image" priority/>
+                    <img src={item.image} width={750} height={500} alt="item-image" priority="true"/>
                     <div>
                         <h2>{item.price}</h2>
                         <h3>{item.title}</h3>
