@@ -30,7 +30,7 @@ const CreateItem = () => {
             })
             const jsonData = await response.json()
             console.log("jsonDataは",jsonData)
-            alert(jsonData.massage)
+            alert(jsonData.message)
             router.push("/")
             router.refresh()
         }catch{
