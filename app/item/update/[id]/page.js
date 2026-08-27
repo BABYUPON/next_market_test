@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 
-const UpdateItem = (context) => {
+const UpdateItem = async(context) => {
     const [title, setTitle] = useState("")
     const [price, setPrice] = useState("")
     const [image, setImage] = useState("")
@@ -10,6 +10,8 @@ const UpdateItem = (context) => {
     const [email, setEmail] = useState("")
 
     const router = useRouter()
+    const { id } = await context.params;
+
     useEffect(() => {
         const getSingleItem = async(id) => {
             //console.log(id)
@@ -23,7 +25,8 @@ const UpdateItem = (context) => {
             setDescription(singleItem.description)
             setEmail(singleItem.email)
         }
-        getSingleItem(context.params.id)
+        //getSingleItem(context.params.id)
+        getSingleItem(id)
     }, [context])
 
     const handleSubmit = async(e) => {
