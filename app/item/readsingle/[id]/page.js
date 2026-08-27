@@ -4,8 +4,8 @@ const getSingleItem = async(id) => {
     //console.log(id)
     const response = await fetch(`http://localhost:3000/api/item/readsingle/${id}`)
     const jsonData = await response.json()
-    const singleItem = jsonData.singleItem
-    return singleItem
+    const singleItem = jsonData.singleItem  //☆jsonデータの中のsingleItemを取り出せる
+    return singleItem //☆忘れてた
     //console.log(jsonData)
 }
 const ReadSingleItem = async(context) => {
