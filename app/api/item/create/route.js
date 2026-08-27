@@ -5,7 +5,7 @@ import { NextResponse } from "next/server"
 export async function POST(request){
 
     const reqBody = await request.json()
-    console.log(reqBody)
+    console.log("追加するreqBodyは", reqBody)
 
     try{
    //console.log(await request.json())
