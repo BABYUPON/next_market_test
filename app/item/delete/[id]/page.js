@@ -1,8 +1,9 @@
 "use client"
 import { use, useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
+import Image from "next/image"
 
-const UpdateItem = (context) => {
+const DeleteItem = (context) => {
     const [title, setTitle] = useState("")
     const [price, setPrice] = useState("")
     const [image, setImage] = useState("")
@@ -34,19 +35,15 @@ const UpdateItem = (context) => {
     const handleSubmit = async(e) => {
         e.preventDefault()
         try{
-            const response = await fetch(`http://localhost:3000/api/item/update/${id}`,{
-                method: "PUT",
+            const response = await fetch(`http://localhost:3000/api/item/delete/${id}`,{
+                method: "DELETE",
                 headers: {
                     "Accept": "applecation/json",
                     "Content-Type": "application/json",
                     "Authorization": `barere ${localStorage.getItem("token")}`
                 },
                 body: JSON.stringify({
-                    title: title,
-                    price: price,
-                    image: image,
-                    description: description,
-                    email: "kuma@gmail.com"
+                   email: "kuma@gmail.com"
                 })
             })
             const jsonData = await response.json()
@@ -55,25 +52,21 @@ const UpdateItem = (context) => {
             router.push("/")
             router.refresh()
         }catch{
-            alert("アイテム編集失敗")
+            alert("アイテム削除失敗")
         }
     }
 
     return (
         <div>
-            <h1>アイテム編集</h1>
+            <h1>アイテム削除</h1>
             <form onSubmit={handleSubmit}>
-                <input value={title} onChange={(e) => setTitle(e.target.value)} 
-                 type="text" name="title" placeholder="アイテム名" required/>
-                <input value={price} onChange={(e) => setPrice(e.target.value)}
-                 type="text" name="price" placeholder="価格" required/>
-                <input value={image} onChange={(e) => setImage(e.target.value)}
-                 type="text" name="image" placeholder="画像" required/>
-                <textarea value={description} onChange={(e) => setDescription(e.target.value)} 
-                 name="description" rows={15} placeholder="商品説明" required></textarea>
-                <button>編集</button>
+                <h2>{title}</h2>
+                <Image src={image} width={750} height={500} alt="item-image" priority/>
+                <h3>\{price}</h3>
+                <p>{description}</p>
+               <button>削除</button>
             </form>
         </div>
     )
 }
-export default UpdateItem
+export default DeleteItem
