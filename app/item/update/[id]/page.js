@@ -32,7 +32,7 @@ const UpdateItem = async(context) => {
     const handleSubmit = async(e) => {
         e.preventDefault()
         try{
-            const response = await fetch(`http://localhost:3000/api/item/update/${context.params.id}`,{
+            const response = await fetch(`http://localhost:3000/api/item/update/${id}`,{
                 method: "PUT",
                 headers: {
                     "Accept": "applecation/json",
