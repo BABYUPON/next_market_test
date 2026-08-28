@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react"
+import { use, useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 
 const UpdateItem = (context) => {
@@ -11,7 +11,7 @@ const UpdateItem = (context) => {
 
     const router = useRouter()
     //const { id } = await context.params;
-    const params = React.use(context.params); 
+    const params = use(context.params); 
     const { id } = params;
 
     useEffect(() => {
