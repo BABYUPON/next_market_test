@@ -13,7 +13,7 @@ export async function POST(request,context){
         //await connectDB()
         //singleItem = await ItemModel.findById(context.params.id)
         //if(singleItem.email == reqBody.email){ 
-        if("dummy@gmail.com" === reqBody.email){ 
+        if("kuma@gmail.com" === reqBody.email){ 
             //await ItemModel.updateOne({_id: context.param.id},reqBody)
             return NextResponse.json({message:"アイテム編集成功"})
         }else{
