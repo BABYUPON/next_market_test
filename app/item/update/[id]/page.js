@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 
-const UpdateItem = async(context) => {
+const UpdateItem = (context) => {
     const [title, setTitle] = useState("")
     const [price, setPrice] = useState("")
     const [image, setImage] = useState("")
@@ -10,7 +10,7 @@ const UpdateItem = async(context) => {
     const [email, setEmail] = useState("")
 
     const router = useRouter()
-    const { id } = await context.params;
+    //const { id } = await context.params;
 
     useEffect(() => {
         const getSingleItem = async(id) => {
@@ -25,14 +25,14 @@ const UpdateItem = async(context) => {
             setDescription(singleItem.description)
             setEmail(singleItem.email)
         }
-        //getSingleItem(context.params.id)
-        getSingleItem(id)
+        getSingleItem(context.params.id)
+        //getSingleItem(id)
     }, [context])
 
     const handleSubmit = async(e) => {
         e.preventDefault()
         try{
-            const response = await fetch(`http://localhost:3000/api/item/update/${id}`,{
+            const response = await fetch(`http://localhost:3000/api/item/update/${context.params.id}`,{
                 method: "PUT",
                 headers: {
                     "Accept": "applecation/json",
@@ -44,7 +44,7 @@ const UpdateItem = async(context) => {
                     price: price,
                     image: image,
                     description: description,
-                    email: "dummy@gmail.com"
+                    email: "ダミーデータ"
                 })
             })
             const jsonData = await response.json()
