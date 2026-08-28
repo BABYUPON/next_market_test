@@ -5,7 +5,7 @@ import { NextResponse } from "next/server"
 export async function POST(request,context){
 
     const reqBody = await request.json()
-    console.log(reqBody)
+    console.log("apiのreqBody",reqBody)
     console.log(reqBody.email)
 
     try{
@@ -15,11 +15,11 @@ export async function POST(request,context){
         //if(singleItem.email == reqBody.email){ 
         if("kuma@gmail.com" === reqBody.email){ 
             //await ItemModel.updateOne({_id: context.param.id},reqBody)
-            return NextResponse.json({message:"アイテム編集成功"})
+            return NextResponse.json({message:"アイテム編集の成功"})
         }else{
             return NextResponse.json({message:"他の人が作成したアイテムです"})
         }
     }catch{
-        return NextResponse.json({message:"アイテム編集失敗"})
+        return NextResponse.json({message:"アイテム編集の失敗"})
     }
  }
