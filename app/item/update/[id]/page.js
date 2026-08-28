@@ -34,6 +34,7 @@ const UpdateItem = (context) => {
     const handleSubmit = async(e) => {
         e.preventDefault()
         try{
+            console.log("fetch前")
             const response = await fetch(`http://localhost:3000/api/item/update/${id}`,{
                 method: "PUT",
                 headers: {
