@@ -11,6 +11,8 @@ const UpdateItem = (context) => {
 
     const router = useRouter()
     //const { id } = await context.params;
+    const params = React.use(context.params); 
+    const { id } = params;
 
     useEffect(() => {
         const getSingleItem = async(id) => {
@@ -25,14 +27,14 @@ const UpdateItem = (context) => {
             setDescription(singleItem.description)
             setEmail(singleItem.email)
         }
-        getSingleItem(context.params.id)
+        getSingleItem(id)
         //getSingleItem(id)
     }, [context])
 
     const handleSubmit = async(e) => {
         e.preventDefault()
         try{
-            const response = await fetch(`http://localhost:3000/api/item/update/${context.params.id}`,{
+            const response = await fetch(`http://localhost:3000/api/item/update/${id}`,{
                 method: "PUT",
                 headers: {
                     "Accept": "applecation/json",
