@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import useAuth from "../../utils.useAuth"
+import useAuth from "../../utils/useAuth"
 
 const CreateItem = () => {
     const [title, setTitle] = useState("")
