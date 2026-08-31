@@ -7,8 +7,8 @@ export async function DELETE(request,context){
    //console.log(await request.json())
     //await connectDB()
     //await ItemModel.deleteOne({_id: context.param.id})
-    return NextResponse.json({message:"アイテム削除成功"})
+    return NextResponse.json({message:"アイテム削除が成功"})
     }catch{
-    return NextResponse.json({message:"アイテム削除失敗"})
+    return NextResponse.json({message:"アイテム削除が失敗"})
     }
  }

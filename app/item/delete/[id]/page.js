@@ -64,7 +64,7 @@ const DeleteItem = (context) => {
             <h1>アイテム削除</h1>
             <form onSubmit={handleSubmit}>
                 <h2>{title}</h2>
-                <Image src={image} width={750} height={500} alt="item-image" priority/>
+                <Image src={image} width={750} height={500} alt="item-image" priority=""/>
                 <h3>\{price}</h3>
                 <p>{description}</p>
                <button>削除</button>
