@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <footer>
-            <p>@{new Date().gerFuuYear()} Next Market</p>
+            <p>@{new Date().gerFullYear()} Next Market</p>
         </footer>
     )
 }
