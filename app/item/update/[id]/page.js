@@ -1,6 +1,7 @@
 "use client"
 import { use, useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
+import useAuth from "../../../utils/useAuth"
 
 const UpdateItem = (context) => {
     const [title, setTitle] = useState("")
@@ -10,6 +11,7 @@ const UpdateItem = (context) => {
     const [email, setEmail] = useState("")
 
     const router = useRouter()
+    const loginUserEmail = useAuth()
     //const { id } = await context.params;
     const params = use(context.params); 
     const { id } = params;
@@ -47,7 +49,7 @@ const UpdateItem = (context) => {
                     price: price,
                     image: image,
                     description: description,
-                    email: "kuma@gmail.com"
+                    email: loginUserEmail
                 })
             })
             const jsonData = await response.json()
@@ -60,7 +62,8 @@ const UpdateItem = (context) => {
         }
     }
 
-    return (
+    if(loginUserEmail === email){
+        return (
         <div>
             <h1>アイテム編集</h1>
             <form onSubmit={handleSubmit}>
@@ -75,6 +78,9 @@ const UpdateItem = (context) => {
                 <button>編集</button>
             </form>
         </div>
-    )
+        )
+    }else{
+        return <h1>権限がありません</h1>
+    }
 }
 export default UpdateItem

@@ -28,7 +28,7 @@ const CreateItem = () => {
                     price: price,
                     image: image,
                     description: description,
-                    email: "ダミーデータ"
+                    email: loginUserEmail
                 })
             })
             const jsonData = await response.json()
@@ -41,7 +41,8 @@ const CreateItem = () => {
         }
     }
 
-    return (
+    if(loginUserEmail){
+        return (
         <div>
             <h1>アイテム作成</h1>
             <form onSubmit={handleSubmit}>
@@ -56,6 +57,7 @@ const CreateItem = () => {
                 <button>作成</button>
             </form>
         </div>
-    )
+        )
+    }
 }
 export default CreateItem
