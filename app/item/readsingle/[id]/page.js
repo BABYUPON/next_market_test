@@ -17,7 +17,7 @@ const ReadSingleItem = async(context) => {
     const singleItem = await getSingleItem(id)
     console.log("singleItemは", singleItem)
     return (
-        <div>
+        <div className="grid-container-si">
             <div>
                 <h1 className="h1-style">個別アイテムページだ</h1>
                 <Image src={singleItem.image} width={750} height={500} alt="item-image" priority/>
