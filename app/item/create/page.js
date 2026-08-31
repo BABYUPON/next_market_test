@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
+import useAuth from "../../utils.useAuth"
 
 const CreateItem = () => {
     const [title, setTitle] = useState("")
@@ -9,6 +10,8 @@ const CreateItem = () => {
     const [description, setDescription] = useState("")
 
     const router = useRouter()
+    const loginUserEmail = useAuth()
+    console.log(loginUserEmail)
 
     const handleSubmit = async(e) => {
         e.preventDefault()
