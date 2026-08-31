@@ -16,7 +16,7 @@ const UpdateItem = (context) => {
 
     useEffect(() => {
         const getSingleItem = async(id) => {
-            //console.log(id)
+            console.log("useEffectのid", id)
             const response = await fetch(`http://localhost:3000/api/item/readsingle/${id}`, {cache: "no-store"})
             const jsonData = await response.json()
             const singleItem = jsonData.singleItem  //☆jsonデータの中のsingleItemを取り出せる
@@ -56,7 +56,7 @@ const UpdateItem = (context) => {
             router.push("/")
             router.refresh()
         }catch{
-            alert("アイテム編集失敗")
+            alert("アイテム編集失敗です")
         }
     }
 
