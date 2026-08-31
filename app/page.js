@@ -13,7 +13,7 @@ const getAllItems = async() =>{
 const ReadAllItems = async() =>{
     console.log(process.env.NEXT_PUBLIC_URL)
     const allItems = await getAllItems()
-    console.log(allItems)
+    //console.log(allItems)
     return(
         <div className="grid-container-in">
             {allItems.map(item => 
