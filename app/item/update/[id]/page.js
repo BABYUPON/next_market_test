@@ -1,7 +1,7 @@
 import MyPage from "./myPage"
 
-export async function generateMetadata(context){
-    const { id } = await context.params;
+export async function generateMetadata(params){
+    const { id } = params;
     const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readsingle/${id}`, {cache: "no-store"})
             const jsonData = await response.json()
             const singleItem = jsonData.singleItem 
@@ -11,8 +11,10 @@ export async function generateMetadata(context){
     }
 }
 
-const UpdateItem = () => {
-    return <MyPage {...context}/>
+export default async function UpdateItem ({params}) {
+    const { id } = params;
+    const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readsingle/${id}`, {cache: "no-store"})
+    const jsonData = await response.json()
+    return <MyPage {...jsondata}/>
 }
 
-export default UpdateItem
