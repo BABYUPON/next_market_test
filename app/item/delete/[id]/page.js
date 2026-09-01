@@ -10,6 +10,7 @@ const DeleteItem = (context) => {
     const [image, setImage] = useState("")
     const [description, setDescription] = useState("")
     const [email, setEmail] = useState("")
+    const [loading, setLoading] = useState(false)
 
     const router = useRouter()
     const loginUserEmail = useAuth()
@@ -29,6 +30,7 @@ const DeleteItem = (context) => {
             setImage(singleItem.image)
             setDescription(singleItem.description)
             setEmail(singleItem.email)
+            setLoading(true)
         }
         getSingleItem(id)
         //getSingleItem(id)
@@ -58,6 +60,7 @@ const DeleteItem = (context) => {
         }
     }
 
+    if(loading){
     if(loginUserEmail === email){
         console.log("imageは", image)
         return (
@@ -75,6 +78,8 @@ const DeleteItem = (context) => {
     }else{
         return <h1>権限がありません</h1>
     }
-
+    }else{
+        return <h1>ローディング中...</h1>
+    }
 }
 export default DeleteItem
