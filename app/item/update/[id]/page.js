@@ -15,6 +15,6 @@ export default async function UpdateItem ({params}) {
     const { id } = params;
     const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readsingle/${id}`, {cache: "no-store"})
     const jsonData = await response.json()
-    return <MyPage {...jsondata}/>
+    return <MyPage {...jsonData}/>
 }
 
