@@ -1,6 +1,15 @@
 import Image from "next/image"
 import Link from "next/link"
 
+export async function generateMetadata(context){
+    const { id } = await context.params;
+    const singleItem = await getSingleItem(id)
+    return{
+        title: singleItem.title,
+        description: singleItem.description
+    }
+}
+
 const getSingleItem = async(id) => {
     //console.log(id)
     const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readsingle/${id}`)
