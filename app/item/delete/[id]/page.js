@@ -20,7 +20,7 @@ const DeleteItem = (context) => {
     useEffect(() => {
         const getSingleItem = async(id) => {
             //console.log(id)
-            const response = await fetch(`http://localhost:3000/api/item/readsingle/${id}`, {cache: "no-store"})
+            const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readsingle/${id}`, {cache: "no-store"})
             const jsonData = await response.json()
             const singleItem = jsonData.singleItem  //☆jsonデータの中のsingleItemを取り出せる
             //return singleItem ☆編集ではこれいらない
@@ -37,7 +37,7 @@ const DeleteItem = (context) => {
     const handleSubmit = async(e) => {
         e.preventDefault()
         try{
-            const response = await fetch(`http://localhost:3000/api/item/delete/${id}`,{
+            const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/delete/${id}`,{
                 method: "DELETE",
                 headers: {
                     "Accept": "applecation/json",

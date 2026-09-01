@@ -19,7 +19,7 @@ const UpdateItem = (context) => {
     useEffect(() => {
         const getSingleItem = async(id) => {
             console.log("useEffectのid", id)
-            const response = await fetch(`http://localhost:3000/api/item/readsingle/${id}`, {cache: "no-store"})
+            const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readsingle/${id}`, {cache: "no-store"})
             const jsonData = await response.json()
             const singleItem = jsonData.singleItem  //☆jsonデータの中のsingleItemを取り出せる
             //return singleItem ☆編集ではこれいらない
@@ -37,7 +37,7 @@ const UpdateItem = (context) => {
         e.preventDefault()
         try{
             console.log("fetch前")
-            const response = await fetch(`http://localhost:3000/api/item/update/${id}`,{
+            const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/update/${id}`,{
                 method: "PUT",
                 headers: {
                     "Accept": "applecation/json",
