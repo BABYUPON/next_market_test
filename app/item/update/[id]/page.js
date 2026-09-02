@@ -11,11 +11,13 @@ export async function generateMetadata(params){
     }
 }
 
-export default async function UpdateItem ({context}) {
+//export default async function UpdateItem ({context}) {
+export default async function UpdateItem ({params}) {
+    const { id } = params;
     //const { id } = context.params;
-    //const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readsingle/${id}`, {cache: "no-store"})
-    //const jsonData = await response.json()
-    //return <MyPage {...jsonData}/>
-    return <MyPage {...context}/>
+    const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readsingle/${id}`, {cache: "no-store"})
+    const jsonData = await response.json()
+    return <MyPage {...jsonData}/>
+    //return <MyPage {...context}/>
 }
 

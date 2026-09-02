@@ -3,7 +3,8 @@ import { use, useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import useAuth from "../../../utils/useAuth"
 
-const UpdateItem = (context) => {
+//const UpdateItem = (context) => {
+const UpdateItem = (params) => {
     const [title, setTitle] = useState("")
     const [price, setPrice] = useState("")
     const [image, setImage] = useState("")
@@ -14,7 +15,7 @@ const UpdateItem = (context) => {
     const router = useRouter()
     const loginUserEmail = useAuth()
     //const { id } = await context.params;
-    const params = use(context.params); 
+    //const params = use(context.params); 
     const { id } = params;
 
     useEffect(() => {
