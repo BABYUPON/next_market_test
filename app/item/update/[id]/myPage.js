@@ -16,7 +16,7 @@ const UpdateItem = (params) => {
     const loginUserEmail = useAuth()
     //const { id } = await context.params;
     //const params = use(context.params); 
-    const { id } = params;
+    const { id } = params.singleItem._id
     console.log("useEffectの前のparams", params)
     console.log("useEffectの前のid", id)
 
