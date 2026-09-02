@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation"
 import Image from "next/image"
 import useAuth from "../../../utils/useAuth"
 
-const DeleteItem = (context) => {
+const DeleteItem = (params) => {
     const [title, setTitle] = useState("")
     const [price, setPrice] = useState("")
     const [image, setImage] = useState("")
@@ -15,7 +15,7 @@ const DeleteItem = (context) => {
     const router = useRouter()
     const loginUserEmail = useAuth()
     //const { id } = await context.params;
-    const params = use(context.params); 
+    //const params = use(context.params); 
     const { id } = params;
 
     useEffect(() => {
@@ -34,7 +34,7 @@ const DeleteItem = (context) => {
         }
         getSingleItem(id)
         //getSingleItem(id)
-    }, [context])
+    }, [params])
 
     const handleSubmit = async(e) => {
         e.preventDefault()
