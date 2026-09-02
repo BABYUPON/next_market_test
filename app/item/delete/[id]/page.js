@@ -14,12 +14,12 @@ export async function generateMetadata(params){
 
 //const DeleteItem = () => {
 export default async function DeleteItem ({params}) {
-    const { id } = params;
+    const { id } = await params;
     //const { id } = context.params;
     const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readsingle/${id}`, {cache: "no-store"})
     const jsonData = await response.json()
     return <MyPage {...jsonData}/>
-    return <MyPage {...context}/>
+    //return <MyPage {...context}/>
 }
 
 //export default DeleteItem
