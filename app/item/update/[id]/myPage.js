@@ -17,6 +17,8 @@ const UpdateItem = (params) => {
     //const { id } = await context.params;
     //const params = use(context.params); 
     const { id } = params;
+    console.log("useEffectの前のparams", params)
+    console.log("useEffectの前のid", id)
 
     useEffect(() => {
         const getSingleItem = async(id) => {
