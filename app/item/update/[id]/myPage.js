@@ -34,7 +34,8 @@ const UpdateItem = (params) => {
         }
         getSingleItem(id)
         //getSingleItem(id)
-    }, [context])
+    //}, [context])
+    }, [params])
 
     const handleSubmit = async(e) => {
         e.preventDefault()
