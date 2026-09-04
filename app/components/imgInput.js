@@ -7,8 +7,8 @@ const ImgInput = (props) => {
         try{
             const data = new FormData()
             data.append("file", imageFile)
-            data.append("upload_preset","upclpe2") //☆ここ修正
-            data.append("cloud_name","6fs9n32") //☆ここ修正
+            data.append("upload_preset","otamesi") //☆ここ修正
+            data.append("cloud_name","rzqqm1k5") //☆ここ修正
             const response= await fetch("https://api.clouinary.com/v1_1/6fs9n32/image/upload", {method: "POST", body: data}) //☆ここ修正
             const jsonData = await response.json()
             await props.setImage(jsonData.url)
