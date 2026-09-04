@@ -9,7 +9,7 @@ const ImgInput = (props) => {
             data.append("file", imageFile)
             data.append("upload_preset","otamesi") //☆ここ修正
             data.append("cloud_name","rzqqm1k5") //☆ここ修正
-            const response= await fetch("https://api.clouinary.com/v1_1/rzqqm1k5/image/upload", {method: "POST", body: data}) //☆ここ修正
+            const response= await fetch("https://api.cloudinary.com/v1_1/rzqqm1k5/image/upload", {method: "POST", body: data}) //☆ここ修正
             const jsonData = await response.json()
             await props.setImage(jsonData.url)
             alert("画像アップロード成功")
